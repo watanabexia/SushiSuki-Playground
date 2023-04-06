@@ -21,25 +21,34 @@ struct SushiView: View {
         return scene
     }
     
-    @State private var isExpanded = false
+    @State var selectedPanel = 0
     @StateObject private var meal = Meal(sushis: [Sushi(name: "Customized Nigiri", assetName: nil, type: .nigiri, ingredients: [syari])])
     
     var body: some View {
         if #available(iOS 16.0, *) {
             NavigationSplitView {
-                Text("Sidebar")
+                HomeView(selectedPanel: $selectedPanel)
+                    .navigationTitle("Sushi Suki!")
             } content: {
-                VStack {
-                    
-                    OrderView(meal: meal)
-                    
-                    IngredientView(meal: meal)
+                switch selectedPanel {
+                case 1:
+                    VStack {
+                        OrderView(meal: meal)
+                        IngredientView(meal: meal)
+                    }
+                    .navigationTitle("Order")
+                default:
+                    HomeView(selectedPanel: $selectedPanel)
                 }
-                .navigationTitle("Order")
-                
             } detail: {
-                SpriteView(scene: scene)
-                    .ignoresSafeArea()
+                switch selectedPanel {
+                case 1:
+                    SpriteView(scene: scene)
+                        .ignoresSafeArea()
+                default:
+                    GuideView()
+                    .navigationTitle("")
+                }
             }
         } else {
             // Fallback on earlier versions
@@ -118,6 +127,6 @@ class SushiScene: SKScene {
 
 struct SushiView_Previews: PreviewProvider {
     static var previews: some View {
-        SushiView()
+        SushiView(selectedPanel: 1)
     }
 }

@@ -8,15 +8,22 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @Binding var selectedPanel: Int
+    
     var body: some View {
-        TabView {
+        List {
+            Button {
+                selectedPanel = 0
+            } label: {
+                Text("App Guide")
+            }
             
+            Button {
+                selectedPanel = 1
+            } label: {
+                Text("Start Order")
+            }
         }
-    }
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
     }
 }
