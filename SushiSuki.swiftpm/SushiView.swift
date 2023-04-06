@@ -22,7 +22,7 @@ struct SushiView: View {
     }
     
     @State private var isExpanded = false
-    @ObservedObject private var meal = Meal(sushis: [nigiriCustomized, nigiriSalmon])
+    @StateObject private var meal = Meal(sushis: [Sushi(name: "Customized Nigiri", assetName: nil, type: .nigiri, ingredients: [syari])])
     
     var body: some View {
         if #available(iOS 16.0, *) {
@@ -30,52 +30,10 @@ struct SushiView: View {
                 Text("Sidebar")
             } content: {
                 VStack {
-                    List {
-                        ForEach(meal.sushis) { sushi in
-                            DisclosureGroup {
-                                if let ingredients = sushi.ingredients {
-                                    ForEach(ingredients) { ingredient in
-                                        IngredientCellView(ingredient: ingredient)
-                                    }
-                                    .onMove(perform: .none)
-                                    .onDelete { indexSet in
-                                        sushi.ingredients?.remove(atOffsets: indexSet)
-                                    }
-                                }
-                            } label: {
-                                SushiCellView(sushi: sushi)
-                            }
-                        }
-                        .onMove() { from, to in
-                            meal.sushis.move(fromOffsets: from, toOffset: to)
-                            
-                            print("\(from), \(to)")
-                        }
-                        .onDelete { index in
-                            meal.sushis.remove(atOffsets: index)
-                        }
-                    }
-                    .toolbar {
-                        EditButton()
-                    }
                     
-                    Text("Ingredient")
-                        .font(.title)
-                        .bold()
+                    OrderView(meal: meal)
                     
-                    List {
-                        ForEach(allIngridentLists) { ingredientList in
-                            DisclosureGroup {
-                                if let ingredients = ingredientList.ingredients {
-                                    ForEach(ingredients) { ingredient in
-                                        IngredientManualCellView(ingredient: ingredient)
-                                    }
-                                }
-                            } label: {
-                                Text(ingredientList.name)
-                            }
-                        }
-                    }
+                    IngredientView(meal: meal)
                 }
                 .navigationTitle("Order")
                 
@@ -85,68 +43,6 @@ struct SushiView: View {
             }
         } else {
             // Fallback on earlier versions
-        }
-    }
-}
-
-struct SushiCellView: View {
-    
-    @State var isEditing = false
-    @ObservedObject var sushi: Sushi
-    
-    var body: some View {
-        
-        if (isEditing) {
-            TextField("Name Placeholder", text: $sushi.name)
-                .onSubmit {
-                    self.isEditing = false
-                }
-        } else {
-            Text(sushi.name)
-                .swipeActions(edge: .leading) {
-                    Button {
-                        self.isEditing = true
-                    } label: {
-                        Text("Rename")
-                    }
-                }
-        }
-    }
-}
-
-struct IngredientCellView: View {
-    
-    let ingredient: Ingredient
-    
-    var body: some View {
-        Button {
-            
-        } label: {
-            HStack {
-                if ingredient.assetName != nil {
-                    AssetCellView(ingredient: ingredient)
-                }
-                Text(ingredient.name)
-            }
-        }
-    }
-}
-
-struct IngredientManualCellView: View {
-    let ingredient: Ingredient
-    
-    var body: some View {
-        HStack {
-            IngredientCellView(ingredient: ingredient)
-            
-            Spacer()
-            
-            Button {
-                
-            } label: {
-                Image(systemName: "info.circle")
-                    .foregroundColor(.accentColor)
-            }
         }
     }
 }
@@ -219,21 +115,6 @@ class SushiScene: SKScene {
 //        fatalError("init(coder:) has not been implemented")
 //    }
 //}
-
-struct AssetCellView: View {
-    
-    let ingredient: Ingredient
-    
-    var body: some View {
-        if let assetName = ingredient.assetName {
-            Image(assetName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 30)
-        }
-    }
-}
-
 
 struct SushiView_Previews: PreviewProvider {
     static var previews: some View {

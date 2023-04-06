@@ -54,8 +54,6 @@ class Sushi: Ingredient {
     
 }
 
-let nigiriCustomized = Sushi(name: "Customzied Nigiri", assetName: nil, type: .nigiri, ingredients: [syari])
-
 let nigiriSalmon = Sushi(name: "Salmon Nigiri", assetName: "sushi_salmon", type: .nigiri, ingredients: [salmon, syari])
 
 //
@@ -68,6 +66,6 @@ class Meal: ObservableObject {
     init(sushis: [Sushi]) {
         self.sushis = sushis
     }
-    
-//    addIngredient
 }
+
+var mealPreview = Meal(sushis: [Sushi(name: "Customized Nigiri", assetName: nil, type: .nigiri, ingredients: [syari])])
