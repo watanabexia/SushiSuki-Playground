@@ -17,23 +17,144 @@ struct SushiView: View {
         let scene = SushiScene()
         
         scene.size = CGSize(width: screenWidth, height: screenHeight)
-        scene.scaleMode = .fill
+        scene.scaleMode = .aspectFit
         return scene
     }
     
+    @State private var isExpanded = false
+    @ObservedObject private var meal = Meal(sushis: [nigiriCustomized, nigiriSalmon])
+    
     var body: some View {
-        SpriteView(scene: scene)
-            .ignoresSafeArea()
+        if #available(iOS 16.0, *) {
+            NavigationSplitView {
+                Text("Sidebar")
+            } content: {
+                VStack {
+                    List {
+                        ForEach(meal.sushis) { sushi in
+                            DisclosureGroup {
+                                if let ingredients = sushi.ingredients {
+                                    ForEach(ingredients) { ingredient in
+                                        IngredientCellView(ingredient: ingredient)
+                                    }
+                                    .onMove(perform: .none)
+                                    .onDelete { indexSet in
+                                        sushi.ingredients?.remove(atOffsets: indexSet)
+                                    }
+                                }
+                            } label: {
+                                SushiCellView(sushi: sushi)
+                            }
+                        }
+                        .onMove() { from, to in
+                            meal.sushis.move(fromOffsets: from, toOffset: to)
+                            
+                            print("\(from), \(to)")
+                        }
+                        .onDelete { index in
+                            meal.sushis.remove(atOffsets: index)
+                        }
+                    }
+                    .toolbar {
+                        EditButton()
+                    }
+                    
+                    Text("Ingredient")
+                        .font(.title)
+                        .bold()
+                    
+                    List {
+                        ForEach(allIngridentLists) { ingredientList in
+                            DisclosureGroup {
+                                if let ingredients = ingredientList.ingredients {
+                                    ForEach(ingredients) { ingredient in
+                                        IngredientManualCellView(ingredient: ingredient)
+                                    }
+                                }
+                            } label: {
+                                Text(ingredientList.name)
+                            }
+                        }
+                    }
+                }
+                .navigationTitle("Order")
+                
+            } detail: {
+                SpriteView(scene: scene)
+                    .ignoresSafeArea()
+            }
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }
 
+struct SushiCellView: View {
+    
+    @State var isEditing = false
+    @ObservedObject var sushi: Sushi
+    
+    var body: some View {
+        
+        if (isEditing) {
+            TextField("Name Placeholder", text: $sushi.name)
+                .onSubmit {
+                    self.isEditing = false
+                }
+        } else {
+            Text(sushi.name)
+                .swipeActions(edge: .leading) {
+                    Button {
+                        self.isEditing = true
+                    } label: {
+                        Text("Rename")
+                    }
+                }
+        }
+    }
+}
 
+struct IngredientCellView: View {
+    
+    let ingredient: Ingredient
+    
+    var body: some View {
+        Button {
+            
+        } label: {
+            HStack {
+                if ingredient.assetName != nil {
+                    AssetCellView(ingredient: ingredient)
+                }
+                Text(ingredient.name)
+            }
+        }
+    }
+}
+
+struct IngredientManualCellView: View {
+    let ingredient: Ingredient
+    
+    var body: some View {
+        HStack {
+            IngredientCellView(ingredient: ingredient)
+            
+            Spacer()
+            
+            Button {
+                
+            } label: {
+                Image(systemName: "info.circle")
+                    .foregroundColor(.accentColor)
+            }
+        }
+    }
+}
 
 class SushiScene: SKScene {
     
     let syariOke = SKSpriteNode(imageNamed: "sushi_syari_oke")
     let osara = SKSpriteNode(imageNamed: "osara")
-    let syari = SKSpriteNode(imageNamed: "sushi_syari")
     
     var selectedNode: SKSpriteNode?
     var selectedTouchLocation: CGPoint?
@@ -41,7 +162,7 @@ class SushiScene: SKScene {
     override func didMove(to view: SKView) {
         addChild(syariOke)
         
-        osara.position = CGPoint(x: frame.midX, y: frame.midY)
+        osara.position = CGPoint(x: frame.midX, y: frame.midY / 2)
         addChild(osara)
     }
     
@@ -78,12 +199,41 @@ class SushiScene: SKScene {
     
     func createSyari(location: CGPoint) {
         if (syariOke.frame.contains(location)) {
+            let syari = SKSpriteNode(imageNamed: "sushi_syari")
             syari.size = CGSize(width: 200, height: 200)
             syari.position = location
             addChild(syari)
         }
     }
 }
+
+//class IngridentNode: SKSpriteNode {
+//    let type: IngridentType
+//
+//    init(type: IngridentType) {
+//        self.type = type
+//        super.init(fileNamed: <#T##String#>)
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//}
+
+struct AssetCellView: View {
+    
+    let ingredient: Ingredient
+    
+    var body: some View {
+        if let assetName = ingredient.assetName {
+            Image(assetName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 30)
+        }
+    }
+}
+
 
 struct SushiView_Previews: PreviewProvider {
     static var previews: some View {
