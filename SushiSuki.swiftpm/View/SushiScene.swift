@@ -148,6 +148,8 @@ class SushiScene: SKScene {
             return false
         }
         
+        guard ingredient1.count != 0 else { return true }
+        
         for i in 0...ingredient1.count - 1 {
             if (ingredient1[i].id != ingredient2[i].id) {
                 return false
@@ -169,7 +171,7 @@ class SushiScene: SKScene {
         
         mealSushiPlateNode = SushiPlateNode(sushiNode: SushiNode(ingredients: mealSushi.ingredients ?? []))
         
-        mealSushiPlateNode.position = osaraLocation!
+        mealSushiPlateNode.position = CGPoint(x: frame.midX, y: frame.midY - mealSushiPlateNode.size.height / 2)
         
         addChild(mealSushiPlateNode)
     }
@@ -180,7 +182,13 @@ class SushiScene: SKScene {
 //
 
 class SushiPlateNode: SKSpriteNode {
+    
+    var sushiNode: SushiNode?
+    
     init(sushiNode: SushiNode) {
+        
+        self.sushiNode = sushiNode
+        
         let container = SKNode()
         
         let osaraNode = SKSpriteNode(imageNamed: "osara")
