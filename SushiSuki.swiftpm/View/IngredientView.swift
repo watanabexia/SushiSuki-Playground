@@ -43,8 +43,10 @@ struct IngredientManualCellView: View {
     var body: some View {
         HStack {
             Button {
-                meal.sushis[0].ingredients?.insert(ingredient.copy(), at: 0)
-                meal.objectWillChange.send()
+                if meal.sushis.count > 0 {
+                    meal.sushis[0].ingredients?.insert(ingredient.copy(), at: 0)
+                    meal.objectWillChange.send()
+                }
             } label: {
                 IngredientCellView(ingredient: ingredient)
             }

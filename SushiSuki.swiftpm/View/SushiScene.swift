@@ -8,7 +8,15 @@
 import SpriteKit
 import SwiftUI
 
+//
+// MARK: Global Parameters
+//
+
 let unitOffset = 25
+
+//
+// MARK: Sushi Scene
+//
 
 class SushiScene: SKScene {
     
@@ -18,13 +26,10 @@ class SushiScene: SKScene {
     let unitNewRotarySushi = 270
     
     var mealSushi: Sushi = Sushi(name: "", type: .nigiri, ingredients: [])
-    var mealSushiIngredientNodes: [IngredientNode] = []
-    var rotarySushis: [Sushi] = []
-    var rotarySushisNodes: [SushiNode] = []
-    var rotaryOsaraNodes: [SKSpriteNode] = []
+    var mealSushiPlateNode: SushiPlateNode = SushiPlateNode(sushiNode: SushiNode(ingredients: []))
+    var rotaryOsaraNodes: [SushiPlateNode] = []
 
     var lastSushiIngredients: [Ingredient]?
-    var osara = SKSpriteNode(imageNamed: "osara")
     var osaraLocation: CGPoint?
     
 //    let syariOke = SKSpriteNode(imageNamed: "sushi_syari_oke")
@@ -49,16 +54,15 @@ class SushiScene: SKScene {
         addChild(kaiten)
         kaiten.position = CGPoint(x: frame.midX, y: frame.maxY - 400)
         kaiten.scale(to: CGSize(width: 1200, height: 676))
-
-        addChild(osara)
-        osara.position = CGPoint(x: frame.midX, y: frame.midY / 2 - CGFloat(unitOffset))
     }
     
     override func update(_ currentTime: TimeInterval) {
         
         osaraLocation = CGPoint(x: frame.midX, y: frame.midY / 2)
         
-        if meal.sushis.isEmpty {} else {
+        if meal.sushis.isEmpty {
+            updateSushi(sushi: Sushi(name: "", type: .nigiri, ingredients: []))
+        } else {
             if (isSameSushi(sushi1: meal.sushis[0], sushi2: mealSushi)) {} else {
                 updateSushi(sushi: meal.sushis[0])
             }
@@ -124,7 +128,8 @@ class SushiScene: SKScene {
     }
     
     func updateOsara() {
-        let newOsaraNode = SKSpriteNode(imageNamed: "osara")
+        let newSushiNode = SushiNode(ingredients: nigiriSalmon.ingredients!)
+        let newOsaraNode = SushiPlateNode(sushiNode: newSushiNode)
         rotaryOsaraNodes.append(newOsaraNode)
         newOsaraNode.position = CGPoint(x: frame.maxX, y: frame.maxY - 230)
         addChild(newOsaraNode)
@@ -154,8 +159,7 @@ class SushiScene: SKScene {
     
     func updateSushi(sushi: Sushi) {
         
-        removeChildren(in: mealSushiIngredientNodes)
-        mealSushiIngredientNodes = []
+        removeChildren(in: [mealSushiPlateNode])
         
         mealSushi.ingredients = []
         
@@ -163,25 +167,39 @@ class SushiScene: SKScene {
             mealSushi.ingredients?.append(ingredient)
         }
         
-        if let ingredients = sushi.ingredients {
-    
-            var counter = 0
-            for ingredient in ingredients.reversed() {
-                let ingredientNode = IngredientNode(imageNamed: ingredient.assetName ?? "osara")
-                
-                ingredientNode.position = CGPoint(x: osaraLocation!.x, y: osaraLocation!.y + CGFloat(counter * unitOffset))
-                mealSushiIngredientNodes.append(ingredientNode)
-                addChild(ingredientNode)
-                
-                counter += 1
-            }
-        }
+        mealSushiPlateNode = SushiPlateNode(sushiNode: SushiNode(ingredients: mealSushi.ingredients ?? []))
+        
+        mealSushiPlateNode.position = osaraLocation!
+        
+        addChild(mealSushiPlateNode)
     }
 }
 
+//
+// MARK: Sushi Plate Node
+//
+
 class SushiPlateNode: SKSpriteNode {
+    init(sushiNode: SushiNode) {
+        let container = SKNode()
+        
+        let osaraNode = SKSpriteNode(imageNamed: "osara")
+        container.addChild(osaraNode)
+        container.addChild(sushiNode)
+        sushiNode.position.y = sushiNode.size.height/2 - 83.5
+        
+        let mergedTexture = SKView().texture(from: container)
+        super.init(texture: mergedTexture, color: .clear, size: CGSize(width: 400, height: sushiNode.size.height + 167))
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
+
+//
+// MARK: Sushi Node
+//
 
 class SushiNode: SKSpriteNode {
     init(ingredients: [Ingredient]) {
@@ -223,6 +241,10 @@ class SushiNode: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+//
+// MARK: Ingredient Node
+//
 
 class IngredientNode: SKSpriteNode {
     
