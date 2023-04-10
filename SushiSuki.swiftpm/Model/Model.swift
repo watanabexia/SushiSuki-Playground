@@ -29,6 +29,11 @@ class Ingredient: Identifiable, ObservableObject {
         self.type = type
         self.ingredients = ingredients
     }
+    
+    func copy() -> Ingredient {
+        let copy = Ingredient(name: self.name, assetName: self.assetName, type: self.type, ingredients: self.ingredients)
+        return copy
+    }
 }
 
 let syari = Ingredient(name: "Syari", assetName: "sushi_syari", type: .syari)
@@ -52,6 +57,10 @@ class Sushi: Ingredient {
         self.ingredients = ingredients
     }
     
+    override func copy() -> Sushi {
+        let copy = Sushi(name: self.name, assetName: self.assetName, type: self.type, ingredients: self.ingredients ?? [])
+        return copy
+    }
 }
 
 let nigiriSalmon = Sushi(name: "Salmon Nigiri", assetName: "sushi_salmon", type: .nigiri, ingredients: [salmon, syari])

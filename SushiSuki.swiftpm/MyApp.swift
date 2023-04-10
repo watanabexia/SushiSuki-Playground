@@ -4,7 +4,11 @@ import SwiftUI
 struct MyApp: App {
     var body: some Scene {
         WindowGroup {
-            SushiView()
+            if #available(iOS 16.0, *) {
+                SushiView()
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
 }
