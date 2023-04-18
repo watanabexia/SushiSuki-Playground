@@ -8,13 +8,13 @@ import PackageDescription
 import AppleProductTypes
 
 let package = Package(
-    name: "SushiSuki",
+    name: "Sushi Suki!",
     platforms: [
         .iOS("15.2")
     ],
     products: [
         .iOSApplication(
-            name: "SushiSuki",
+            name: "Sushi Suki!",
             targets: ["AppModule"],
             bundleIdentifier: "shigure.manufactures.SushiSuki",
             teamIdentifier: "A7HL64F7MB",

@@ -60,7 +60,10 @@ struct IngredientManualCellView: View {
 }
 
 struct IngredientView_Previews: PreviewProvider {
+    static let sushiDBPreview = SushiDB()
+    
     static var previews: some View {
         IngredientView(meal: mealPreview)
+            .environmentObject(sushiDBPreview)
     }
 }
