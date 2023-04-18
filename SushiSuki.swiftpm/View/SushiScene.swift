@@ -290,9 +290,12 @@ class IngredientNode: SKSpriteNode {
 }
 
 struct SushiScene_Previews: PreviewProvider {
+    static let sushiDBPreview = SushiDB()
+    
     static var previews: some View {
         if #available(iOS 16.0, *) {
             SushiView(selectedPanel: 1)
+                .environmentObject(sushiDBPreview)
         } else {
             // Fallback on earlier versions
         }
