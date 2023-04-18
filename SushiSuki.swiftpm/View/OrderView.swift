@@ -25,7 +25,7 @@ struct OrderView: View {
                 Spacer()
                 
                 Button {
-                    meal.sushis.insert(Sushi(name: "Customized Nigiri", assetName: nil, type: .nigiri, ingredients: [sushiDB.ingredientDict["syari"]!]), at: 0)
+                    meal.sushis.insert(Sushi(name: "customized nigiri", assetName: nil, type: .nigiri, ingredients: [sushiDB.ingredientDict["syari"]!]), at: 0)
                 } label: {
                     Image(systemName: "plus.circle")
                 }

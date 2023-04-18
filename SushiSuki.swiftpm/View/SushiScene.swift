@@ -35,6 +35,8 @@ class SushiScene: SKScene {
     var selectedNode: SKSpriteNode?
     var selectedTouchLocation: CGPoint?
     
+    var showMealSushi = true
+    
     init(sushiDB: SushiDB, meal: Meal) {
         self.sushiDB = sushiDB
         self.meal = meal
@@ -59,13 +61,13 @@ class SushiScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         
         osaraLocation = CGPoint(x: frame.midX, y: frame.midY / 2)
+        var updatedSushi = Sushi(name: "", type: .nigiri, ingredients: [])
+        if meal.sushis.isEmpty == false {
+            updatedSushi = meal.sushis[0]
+        }
         
-        if meal.sushis.isEmpty {
-            updateSushi(sushi: Sushi(name: "", type: .nigiri, ingredients: []))
-        } else {
-            if (isSameSushi(sushi1: meal.sushis[0], sushi2: mealSushi)) {} else {
-                updateSushi(sushi: meal.sushis[0])
-            }
+        if (isSameSushi(sushi1: updatedSushi, sushi2: mealSushi)) {} else {
+            updateSushi(sushi: updatedSushi)
         }
         
         if (frameCounter == unitNewRotarySushi) {
@@ -102,7 +104,10 @@ class SushiScene: SKScene {
                 
                 let moveDownAction = SKAction.move(by: CGVector(dx: 0, dy: -1000), duration: 0.5)
                 
-                self.mealSushiPlateNode.run(moveDownAction)
+                self.mealSushiPlateNode.run(moveDownAction, completion: {
+                    self.showMealSushi = false
+                    self.meal.sushis.insert((touchedNode.sushiNode?.sushi)!, at: 0)
+                })
             }
         }
     }
@@ -128,8 +133,8 @@ class SushiScene: SKScene {
             let moveCenterAction = SKAction.move(to: CGPoint(x: frame.midX, y: frame.midY - touchedNode.size.height / 2), duration: 0.5)
             
             touchedNode.run(moveCenterAction, completion: {
-                self.meal.sushis.insert((touchedNode.sushiNode?.sushi)!, at: 0)
-                self.mealSushiPlateNode.position = CGPoint(x: self.frame.midX, y: self.frame.midY - self.mealSushiPlateNode.size.height / 2)
+                self.mealSushiPlateNode.alpha = 1
+                self.showMealSushi = true
                 self.removeChildren(in: [touchedNode])
             })
         }
@@ -192,6 +197,10 @@ class SushiScene: SKScene {
         mealSushiPlateNode.position = CGPoint(x: frame.midX, y: frame.midY - mealSushiPlateNode.size.height / 2)
         
         mealSushiPlateNode.zPosition = 2
+        
+        if (showMealSushi == false) {
+            mealSushiPlateNode.alpha = 0
+        }
         
         addChild(mealSushiPlateNode)
     }

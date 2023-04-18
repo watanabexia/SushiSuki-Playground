@@ -142,7 +142,9 @@ class SushiDB: ObservableObject {
                         }
                     }
                     
-                    ingredientListDict["Flesh"] = fleshList
+                    ingredientListDict["Flesh"] = fleshList.sorted(by: { ingredient1, ingredient2 in
+                        return ingredient1.name < ingredient2.name
+                    })
                     ingredientListDict["Other"] = otherList
                     ingredientListDict["Syari"] = syariList
                     

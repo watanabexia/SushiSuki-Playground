@@ -18,7 +18,7 @@ struct IngredientView: View {
                 .bold()
             
             List {
-                ForEach(Array(sushiDB.ingredientListDict), id: \.key) { key, value in
+                ForEach(Array(sushiDB.ingredientListDict).reversed(), id: \.key) { key, value in
                     DisclosureGroup {
                         ForEach(value) { ingredient in
                             IngredientManualCellView(ingredient: ingredient, meal: meal)

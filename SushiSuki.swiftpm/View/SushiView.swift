@@ -13,7 +13,7 @@ struct SushiView: View {
     @EnvironmentObject var sushiDB: SushiDB
     @State var columnVisibility = NavigationSplitViewVisibility.all
     @State var selectedPanel = 0
-    @StateObject private var meal = Meal(sushis: [Sushi(name: "customed nigiri", type: .nigiri, ingredients: [syari])])
+    @StateObject private var meal = Meal(sushis: [Sushi(name: "customized nigiri", type: .nigiri, ingredients: [syari])])
     
     var scene: SKScene {
         let scene = SushiScene(sushiDB: sushiDB, meal: meal)
