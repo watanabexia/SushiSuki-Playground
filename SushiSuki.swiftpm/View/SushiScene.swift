@@ -19,7 +19,7 @@ let unitOffset = 25
 //
 
 class SushiScene: SKScene {
-    
+    @ObservedObject var sushiDB: SushiDB
     @ObservedObject var meal: Meal
     
     var frameCounter = 0
@@ -35,7 +35,8 @@ class SushiScene: SKScene {
     var selectedNode: SKSpriteNode?
     var selectedTouchLocation: CGPoint?
     
-    init(meal: Meal) {
+    init(sushiDB: SushiDB, meal: Meal) {
+        self.sushiDB = sushiDB
         self.meal = meal
         
         let screenWidth = UIScreen.main.bounds.width
@@ -144,7 +145,8 @@ class SushiScene: SKScene {
     }
     
     func updateOsara() {
-        let newSushiNode = SushiNode(sushi: nigiriSalmon.copy())
+        let newSushi = sushiDB.sushiDict.randomElement()?.value.copy()
+        let newSushiNode = SushiNode(sushi: newSushi ?? Sushi(name: "customized nigiri", type: .nigiri, ingredients: []))
         let newOsaraNode = SushiPlateNode(sushiNode: newSushiNode)
         rotaryOsaraNodes.append(newOsaraNode)
         newOsaraNode.position = CGPoint(x: frame.maxX + 200, y: frame.maxY - 230)
@@ -160,16 +162,14 @@ class SushiScene: SKScene {
     
     func isSameSushi(sushi1: Sushi, sushi2: Sushi) -> Bool {
         
-        guard let ingredient1 = sushi1.ingredients, let ingredient2 = sushi2.ingredients else { return false }
-        
-        if (ingredient1.count != ingredient2.count) {
+        if (sushi1.ingredients.count != sushi2.ingredients.count) {
             return false
         }
         
-        guard ingredient1.count != 0 else { return true }
+        guard sushi1.ingredients.count != 0 else { return true }
         
-        for i in 0...ingredient1.count - 1 {
-            if (ingredient1[i].id != ingredient2[i].id) {
+        for i in 0...sushi1.ingredients.count - 1 {
+            if (sushi1.ingredients[i].id != sushi2.ingredients[i].id) {
                 return false
             }
         }
@@ -183,8 +183,8 @@ class SushiScene: SKScene {
         
         mealSushi.ingredients = []
         
-        for ingredient in sushi.ingredients ?? [] {
-            mealSushi.ingredients?.append(ingredient)
+        for ingredient in sushi.ingredients {
+            mealSushi.ingredients.append(ingredient)
         }
         
         mealSushiPlateNode = SushiPlateNode(sushiNode: SushiNode(sushi: sushi))
@@ -241,7 +241,7 @@ class SushiNode: SKSpriteNode {
         
         var ingredientNodes:[IngredientNode] = []
         
-        for ingredient in (sushi.ingredients ?? []).reversed() {
+        for ingredient in (sushi.ingredients).reversed() {
             ingredientNodes.append(IngredientNode(imageNamed: ingredient.assetName!))
         }
         

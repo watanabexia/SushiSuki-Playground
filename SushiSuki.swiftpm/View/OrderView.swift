@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OrderView: View {
-    
+    @EnvironmentObject var sushiDB: SushiDB
     @ObservedObject var meal: Meal
     
     var body: some View {
@@ -25,7 +25,7 @@ struct OrderView: View {
                 Spacer()
                 
                 Button {
-                    meal.sushis.insert(Sushi(name: "Customized Nigiri", assetName: nil, type: .nigiri, ingredients: [syari]), at: 0)
+                    meal.sushis.insert(Sushi(name: "Customized Nigiri", assetName: nil, type: .nigiri, ingredients: [sushiDB.ingredientDict["syari"]!]), at: 0)
                 } label: {
                     Image(systemName: "plus.circle")
                 }
@@ -35,15 +35,13 @@ struct OrderView: View {
             List {
                 ForEach(meal.sushis) { sushi in
                     DisclosureGroup {
-                        if let ingredients = sushi.ingredients {
-                            ForEach(ingredients) { ingredient in
-                                IngredientCellView(ingredient: ingredient)
-                            }
-                            .onMove(perform: .none)
-                            .onDelete { indexSet in
-                                sushi.ingredients?.remove(atOffsets: indexSet)
-                                meal.objectWillChange.send()
-                            }
+                        ForEach(sushi.ingredients) { ingredient in
+                            IngredientCellView(ingredient: ingredient)
+                        }
+                        .onMove(perform: .none)
+                        .onDelete { indexSet in
+                            sushi.ingredients.remove(atOffsets: indexSet)
+                            meal.objectWillChange.send()
                         }
                     } label: {
                         SushiCellView(sushi: sushi)

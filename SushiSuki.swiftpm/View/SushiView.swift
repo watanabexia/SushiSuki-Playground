@@ -10,17 +10,16 @@ import SpriteKit
 
 @available(iOS 16.0, *)
 struct SushiView: View {
+    @EnvironmentObject var sushiDB: SushiDB
+    @State var columnVisibility = NavigationSplitViewVisibility.all
+    @State var selectedPanel = 0
+    @StateObject private var meal = Meal(sushis: [Sushi(name: "customed nigiri", type: .nigiri, ingredients: [syari])])
     
     var scene: SKScene {
-        let scene = SushiScene(meal: meal)
-        
+        let scene = SushiScene(sushiDB: sushiDB, meal: meal)
         scene.scaleMode = .aspectFill
         return scene
     }
-    
-    @State var columnVisibility = NavigationSplitViewVisibility.all
-    @State var selectedPanel = 0
-    @StateObject private var meal = Meal(sushis: [Sushi(name: "Customized Nigiri", assetName: nil, type: .nigiri, ingredients: [syari])])
     
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {

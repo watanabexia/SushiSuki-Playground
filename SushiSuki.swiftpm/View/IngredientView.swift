@@ -8,27 +8,23 @@
 import SwiftUI
 
 struct IngredientView: View {
-    
+    @EnvironmentObject var sushiDB: SushiDB
     @ObservedObject var meal: Meal
     
     var body: some View {
-        
-        
         VStack {
             Text("Ingredient")
                 .font(.title)
                 .bold()
             
             List {
-                ForEach(allIngridentLists) { ingredientList in
+                ForEach(Array(sushiDB.ingredientListDict), id: \.key) { key, value in
                     DisclosureGroup {
-                        if let ingredients = ingredientList.ingredients {
-                            ForEach(ingredients) { ingredient in
-                                IngredientManualCellView(ingredient: ingredient, meal: meal)
-                            }
+                        ForEach(value) { ingredient in
+                            IngredientManualCellView(ingredient: ingredient, meal: meal)
                         }
                     } label: {
-                        Text(ingredientList.name)
+                        Text(key)
                     }
                 }
             }
@@ -44,7 +40,7 @@ struct IngredientManualCellView: View {
         HStack {
             Button {
                 if meal.sushis.count > 0 {
-                    meal.sushis[0].ingredients?.insert(ingredient.copy(), at: 0)
+                    meal.sushis[0].ingredients.insert(ingredient.copy(), at: 0)
                     meal.objectWillChange.send()
                 }
             } label: {

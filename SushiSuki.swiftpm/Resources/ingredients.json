@@ -1,0 +1,222 @@
+[
+  {
+    "name": "syari",
+    "assetName": "sushi_syari",
+    "type": 0,
+    "sourceName": "rice",
+    "kanji": "米",
+    "kana": "ごめ",
+    "romaji": "gome",
+    "sourceAssetName": "food_kome_masu"
+  },
+  {
+    "name": "tamago",
+    "assetName": "tamago",
+    "type": 2,
+    "sourceName": "egg",
+    "kanji": "玉子",
+    "kana": "たまご",
+    "romaji": "tamago",
+    "sourceAssetName": "egg_white"
+  },
+  {
+    "name": "akami",
+    "assetName": "akami",
+    "type": 1,
+    "sourceName": "tuna",
+    "kanji": "鮪",
+    "kana": "マグロ",
+    "romaji": "maguro",
+    "sourceAssetName": "fish_maguro2"
+  },
+  {
+    "name": "yellow tail",
+    "assetName": "buri",
+    "type": 1,
+    "sourceName": "yellow tail",
+    "kanji": "鰤",
+    "kana": "ブリ",
+    "romaji": "buri",
+    "sourceAssetName": "fish_buri"
+  },
+  {
+    "name": "chutoro",
+    "assetName": "chutoro",
+    "type": 1,
+    "sourceName": "tuna",
+    "kanji": "鮪",
+    "kana": "マグロ",
+    "romaji": "maguro",
+    "sourceAssetName": "fish_maguro2"
+  },
+  {
+    "name": "shrimp",
+    "assetName": "ebi",
+    "type": 1,
+    "sourceName": "shrimp",
+    "kanji": "蝦",
+    "kana": "エビ",
+    "romaji": "ebi",
+    "sourceAssetName": "ebi_aka"
+  },
+  {
+    "name": "flounder fin (engawa)",
+    "assetName": "engawa",
+    "type": 1,
+    "sourceName": "flounder",
+    "kanji": "鮃",
+    "kana": "ヒラメ",
+    "romaji": "hirame",
+    "sourceAssetName": "fish_sakana_hirame"
+  },
+  {
+    "name": "bonito",
+    "assetName": "katsuo",
+    "type": 1,
+    "sourceName": "bonito",
+    "kanji": "鰹",
+    "kana": "カツオ",
+    "romaji": "katsuo",
+    "sourceAssetName": "fish_katsuo"
+  },
+  {
+    "name": "nodoguro",
+    "assetName": "nodoguro",
+    "type": 1,
+    "sourceName": "blackthroat seaperch",
+    "kanji": "喉黒",
+    "kana": "のどぐろ",
+    "romaji": "nodoguro",
+    "sourceAssetName": "fish_nodoguro"
+  },
+  {
+    "name": "sardine",
+    "assetName": "iwashi",
+    "type": 1,
+    "sourceName": "sardine",
+    "kanji": "鰯",
+    "kana": "いわし",
+    "romaji": "iwashi",
+    "sourceAssetName": "fish_sakana_iwashi"
+  },
+  {
+    "name": "salmon",
+    "assetName": "salmon",
+    "type": 1,
+    "sourceName": "salmon",
+    "kanji": "鮭",
+    "kana": "サケ",
+    "romaji": "sake",
+    "sourceAssetName": "fish_sakana_sake"
+  },
+  {
+    "name": "bream",
+    "assetName": "tai",
+    "type": 1,
+    "sourceName": "bream",
+    "kanji": "鯛",
+    "kana": "タイ",
+    "romaji": "tai",
+    "sourceAssetName": "fish_sakana_tai"
+  },
+  {
+    "name": "squid",
+    "assetName": "ika",
+    "type": 1,
+    "sourceName": "squid",
+    "kanji": "烏賊",
+    "kana": "イカ",
+    "romaji": "ika",
+    "sourceAssetName": "fish_sakana_yariika_syokuwan"
+  },
+  {
+    "name": "mantis shrimp",
+    "assetName": "syako",
+    "type": 1,
+    "sourceName": "mantis shrimp",
+    "kanji": "蝦蛄",
+    "kana": "シャコ",
+    "romaji": "syako",
+    "sourceAssetName": "fish_syako"
+  },
+  {
+    "name": "octopus",
+    "assetName": "tako",
+    "type": 1,
+    "sourceName": "octopus",
+    "kanji": "蛸",
+    "kana": "タコ",
+    "romaji": "tako",
+    "sourceAssetName": "fish_tako_oyogu"
+  },
+  {
+    "name": "eel",
+    "assetName": "unagi",
+    "type": 1,
+    "sourceName": "eel",
+    "kanji": "鰻",
+    "kana": "うなぎ",
+    "romaji": "unagi",
+    "sourceAssetName": "fish_unagi2"
+  },
+  {
+    "name": "harasu",
+    "assetName": "harasu",
+    "type": 1,
+    "sourceName": "salmon",
+    "kanji": "鮭",
+    "kana": "サケ",
+    "romaji": "sake",
+    "sourceAssetName": "fish_sakana_sake"
+  },
+  {
+    "name": "scallop",
+    "assetName": "hotate",
+    "type": 1,
+    "sourceName": "scallop",
+    "kanji": "帆立",
+    "kana": "ホタテ",
+    "romaji": "hotate",
+    "sourceAssetName": "kai_hotate"
+  },
+  {
+    "name": "kinmedai",
+    "assetName": "kinmedai",
+    "type": 1,
+    "sourceName": "splendid alfonsino",
+    "kanji": "金目鯛",
+    "kana": "キンメダイ",
+    "romaji": "kinmedai",
+    "sourceAssetName": "shinkai_kinmedai_gold"
+  },
+  {
+    "name": "otoro",
+    "assetName": "ootoro",
+    "type": 1,
+    "sourceName": "tuna",
+    "kanji": "鮪",
+    "kana": "マグロ",
+    "romaji": "maguro",
+    "sourceAssetName": "fish_maguro2"
+  },
+  {
+    "name": "uni",
+    "assetName": "uni",
+    "type": 1,
+    "sourceName": "urchin",
+    "kanji": "雲丹",
+    "kana": "ウニ",
+    "romaji": "uni",
+    "sourceAssetName": "uni_murasaki"
+  },
+  {
+    "name": "ginger onion",
+    "assetName": "negi",
+    "type": 2,
+    "sourceName": "ginger onion",
+    "kanji": "生姜　葱",
+    "kana": "ショウガ　ネギ",
+    "romaji": "syoga negi",
+    "sourceAssetName": "syoga_negi"
+  }
+]
