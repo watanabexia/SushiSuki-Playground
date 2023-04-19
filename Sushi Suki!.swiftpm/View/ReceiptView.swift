@@ -32,11 +32,6 @@ struct ReceiptView: View {
                                 Spacer()
                             }
                         }
-                        .onMove(perform: .none)
-                        .onDelete { indexSet in
-                            sushi.ingredients.remove(atOffsets: indexSet)
-                            meal.objectWillChange.send()
-                        }
                     } label: {
                         SushiCellView(sushi: sushi)
                     }

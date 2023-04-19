@@ -7,7 +7,7 @@ struct MyApp: App {
     var body: some Scene {
         WindowGroup {
             if #available(iOS 16.0, *) {
-                SushiView()
+                NavigationView()
                     .environmentObject(sushiDB)
             } else {
                 // Fallback on earlier versions
