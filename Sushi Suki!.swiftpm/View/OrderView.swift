@@ -11,12 +11,14 @@ struct OrderView: View {
     @EnvironmentObject var sushiDB: SushiDB
     @ObservedObject var meal: Meal
     
+    @State private var showReceipt = false
+    
     var body: some View {
         
         VStack {
             HStack {
                 Button {
-                    
+                    showReceipt.toggle()
                 } label: {
                     Text("Receipt")
                 }
@@ -25,7 +27,7 @@ struct OrderView: View {
                 Spacer()
                 
                 Button {
-                    meal.sushis.insert(Sushi(name: "customized nigiri", assetName: nil, type: .nigiri, ingredients: [sushiDB.ingredientDict["syari"]!]), at: 0)
+                    meal.sushis.insert(customizedNigiri.copy(), at: 0)
                 } label: {
                     Image(systemName: "plus.circle")
                 }
@@ -66,6 +68,9 @@ struct OrderView: View {
                 Text("CLEAR ALL")
             }
             .padding(.bottom, 30)
+        }
+        .sheet(isPresented: $showReceipt) {
+            ReceiptView(meal: meal)
         }
     }
 }
