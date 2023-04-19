@@ -7,7 +7,9 @@
     "kanji": "米",
     "kana": "ごめ",
     "romaji": "gome",
-    "sourceAssetName": "food_kome_masu"
+    "sourceAssetName": "food_kome_masu",
+    "description": "Syari is typically a specific variety of short-grain Japanese rice that has been cultivated for centuries for its unique texture and flavor. The rice is first rinsed thoroughly to remove any excess starch, then cooked in a specific way that involves adding a mixture of vinegar, sugar, and salt to give it the distinctive flavor and glossy appearance that is characteristic of sushi rice.",
+    "sourceDescription": ""
   },
   {
     "name": "tamago",
@@ -17,7 +19,9 @@
     "kanji": "玉子",
     "kana": "たまご",
     "romaji": "tamago",
-    "sourceAssetName": "egg_white"
+    "sourceAssetName": "egg_white",
+    "description": "Tamagoyaki is a Japanese omelet made by rolling together multiple layers of seasoned and sweetened beaten eggs, typically cooked in a rectangular pan. It is a common component of tamago sushi, where it is used to create a thin layer of cooked egg on top of the sushi rice. The tamagoyaki used in tamago sushi is typically seasoned with sugar, mirin, and soy sauce, giving it a slightly sweet and savory flavor that complements the rice and other ingredients. The tamagoyaki layer adds a unique texture and taste to the sushi, making it a popular option for sushi lovers who prefer a milder flavor profile.",
+    "sourceDescription": ""
   },
   {
     "name": "akami",
@@ -27,7 +31,9 @@
     "kanji": "鮪",
     "kana": "マグロ",
     "romaji": "maguro",
-    "sourceAssetName": "fish_maguro2"
+    "sourceAssetName": "fish_maguro2",
+    "description": "Akami is a Japanese term that refers to the lean, dark red meat found on the back of tuna fish. This meat is particularly flavorful and meaty, with a slightly chewy texture that is different from other parts of the fish. Akami is a popular ingredient in many Japanese dishes, including sushi, sashimi, and donburi bowls. It is often considered a high-quality cut of fish, and is prized for its rich flavor and nutritional value. Akami is typically sourced from large, mature tuna that are caught in the waters surrounding Japan, and is a popular ingredient in many traditional Japanese dishes.",
+    "sourceDescription": "Tuna is typically sourced from large, mature fish that are caught in the waters surrounding Japan. This tuna is known for its rich, meaty flavor and firm texture, which make it well-suited for use in sushi and other Japanese dishes. The tuna is often flash-frozen shortly after being caught, in order to preserve its freshness and quality until it is ready to be prepared."
   },
   {
     "name": "yellow tail",
@@ -37,7 +43,9 @@
     "kanji": "鰤",
     "kana": "ブリ",
     "romaji": "buri",
-    "sourceAssetName": "fish_buri"
+    "sourceAssetName": "fish_buri",
+    "description": "",
+    "sourceDescription": "Buri is a Japanese term that refers to the adult yellowtail fish, also known as Seriola quinqueradiata. This fish is commonly found in the Pacific Ocean and is a popular ingredient in many traditional Japanese dishes. Buri has a rich, buttery flavor and a firm texture, making it a versatile ingredient in both raw and cooked dishes. In Japan, buri is often served as sashimi or sushi, as well as grilled or simmered in a hot pot. Buri is typically harvested during the winter months when the fish is at its fattiest and most flavorful. This makes it a highly prized and sought-after ingredient in many Japanese restaurants around the world."
   },
   {
     "name": "chutoro",
@@ -47,7 +55,9 @@
     "kanji": "鮪",
     "kana": "マグロ",
     "romaji": "maguro",
-    "sourceAssetName": "fish_maguro2"
+    "sourceAssetName": "fish_maguro2",
+    "description": "Chutoro is a type of sushi made from the belly of the tuna fish. This cut of fish is located between the leaner akami and the fattier otoro, and is known for its pinkish-red color, rich flavor, and tender texture. The chutoro cut contains a moderate amount of marbling, which gives it a creamy, buttery taste and a luxurious mouthfeel. It is often considered a high-end ingredient in sushi and is popular with sushi connoisseurs who appreciate the subtleties of the different cuts of tuna. Chutoro is often served as part of an assorted sushi platter or as a standalone dish, and is typically paired with other complementary flavors and textures to create a balanced and satisfying bite.",
+    "sourceDescription": "Tuna is typically sourced from large, mature fish that are caught in the waters surrounding Japan. This tuna is known for its rich, meaty flavor and firm texture, which make it well-suited for use in sushi and other Japanese dishes. The tuna is often flash-frozen shortly after being caught, in order to preserve its freshness and quality until it is ready to be prepared."
   },
   {
     "name": "shrimp",
@@ -57,7 +67,9 @@
     "kanji": "蝦",
     "kana": "エビ",
     "romaji": "ebi",
-    "sourceAssetName": "ebi_aka"
+    "sourceAssetName": "ebi_aka",
+    "description": "",
+    "sourceDescription": "The shrimp used for ebi sushi is often large, fresh, and high-quality, with a sweet, delicate flavor and a firm, juicy texture. The shrimp is usually peeled and deveined before being boiled or grilled, and then placed on top of a bed of sushi rice."
   },
   {
     "name": "flounder fin (engawa)",
@@ -67,7 +79,9 @@
     "kanji": "鮃",
     "kana": "ヒラメ",
     "romaji": "hirame",
-    "sourceAssetName": "fish_sakana_hirame"
+    "sourceAssetName": "fish_sakana_hirame",
+    "description": "Engawa is a type of sushi made from the muscle that controls the fins of the flounder fish, located along the fish's belly. The engawa has a distinct texture that is both chewy and tender, with a slightly sweet and savory flavor. It is often considered a delicacy in Japanese cuisine, and is typically served as nigiri sushi, where the thin slice of fish is placed on top of a bed of sushi rice.",
+    "sourceDescription": "Flounder fish is a type of flatfish that is commonly found in saltwater environments around the world. It is known for its flat, diamond-shaped body and the unique way it swims, with one side facing up and the other facing down. Flounder fish are typically light brown or gray in color, with a mottled pattern that helps them blend in with their surroundings. They are a popular food fish, with a delicate, sweet flavor and a firm, white flesh that makes them well-suited for grilling, frying, or baking. Flounder is also a popular ingredient in many Japanese dishes, including sushi, sashimi, and hot pots. The muscle that controls the fins of the flounder fish, known as the engawa, is particularly prized for its unique texture and flavor, and is a popular component of many traditional Japanese dishes."
   },
   {
     "name": "bonito",
@@ -77,7 +91,9 @@
     "kanji": "鰹",
     "kana": "カツオ",
     "romaji": "katsuo",
-    "sourceAssetName": "fish_katsuo"
+    "sourceAssetName": "fish_katsuo2",
+    "description": "",
+    "sourceDescription": "Bonito is a type of fish that is commonly found in the waters surrounding Japan and other parts of the world. It is known for its meaty, flavorful flesh, which is dark pink in color and has a firm texture. Bonito is often used to make dashi, a type of Japanese broth that forms the basis of many Japanese dishes. The fish is typically dried and smoked, then shaved into thin flakes, which are then used to make the broth. Bonito is also a popular ingredient in many other Japanese dishes, including sashimi, sushi, and grilled dishes. The flavor of bonito is often described as savory and slightly smoky, with a subtle sweetness that pairs well with a variety of other ingredients."
   },
   {
     "name": "nodoguro",
@@ -87,7 +103,9 @@
     "kanji": "喉黒",
     "kana": "のどぐろ",
     "romaji": "nodoguro",
-    "sourceAssetName": "fish_nodoguro"
+    "sourceAssetName": "fish_nodoguro",
+    "description": "",
+    "sourceDescription": "Nodoguro is a type of fish found in the waters surrounding Japan, also known as the blackthroat seaperch. It is a prized ingredient in Japanese cuisine, known for its tender, flavorful flesh and delicate, slightly sweet flavor. Nodoguro has a distinctive appearance, with a black throat and iridescent scales that shine in the light. It is typically served as sashimi or grilled, and is often paired with complementary flavors and textures to create a balanced and satisfying dish. Nodoguro is considered a high-end ingredient in Japanese cuisine, and is popular among sushi and seafood enthusiasts who appreciate the subtleties of different types of fish."
   },
   {
     "name": "sardine",
@@ -97,7 +115,9 @@
     "kanji": "鰯",
     "kana": "いわし",
     "romaji": "iwashi",
-    "sourceAssetName": "fish_sakana_iwashi"
+    "sourceAssetName": "fish_sakana_iwashi",
+    "description": "",
+    "sourceDescription": "Sardines are a type of small, oily fish that are commonly found in both saltwater and freshwater environments around the world. They are known for their rich, flavorful flesh, which is high in omega-3 fatty acids and other nutrients. Sardines are a popular ingredient in many different cuisines, including Mediterranean and Japanese, and can be prepared in a variety of ways, such as grilling, frying, or smoking. In Japanese cuisine, sardines are often served as nigiri sushi or as a component of other dishes, such as donburi bowls or hot pots. Sardines are typically served fresh, and their small size makes them well-suited for use in a variety of different recipes."
   },
   {
     "name": "salmon",
@@ -107,7 +127,9 @@
     "kanji": "鮭",
     "kana": "サケ",
     "romaji": "sake",
-    "sourceAssetName": "fish_sakana_sake"
+    "sourceAssetName": "fish_sakana_sake",
+    "description": "",
+    "sourceDescription": "Salmon is a type of fish that is native to the waters of the North Atlantic and Pacific Oceans. It is a popular food fish that is enjoyed by people around the world, and is known for its firm, meaty flesh and rich, buttery flavor. Salmon is a versatile ingredient that can be prepared in a variety of ways, such as grilling, baking, or smoking, and is often served as sashimi, sushi, or as a component of other dishes, such as salads, pasta dishes, or sandwiches. In addition to its delicious taste, salmon is also a nutritious fish that is high in omega-3 fatty acids and other important nutrients."
   },
   {
     "name": "bream",
@@ -117,7 +139,9 @@
     "kanji": "鯛",
     "kana": "タイ",
     "romaji": "tai",
-    "sourceAssetName": "fish_sakana_tai"
+    "sourceAssetName": "fish_sakana_tai",
+    "description": "",
+    "sourceDescription": "Bream is a type of fish that is found in both saltwater and freshwater environments around the world. It is known for its white, tender flesh and mild, sweet flavor. Bream is a popular food fish that is enjoyed in many different cuisines, including Mediterranean and Asian, and is often prepared by grilling, frying, or baking. In Japanese cuisine, bream is often served as sashimi or nigiri sushi, where its delicate flavor and tender texture are showcased. Bream is a relatively small fish, and is typically served whole, with its head and tail intact."
   },
   {
     "name": "squid",
@@ -127,7 +151,9 @@
     "kanji": "烏賊",
     "kana": "イカ",
     "romaji": "ika",
-    "sourceAssetName": "fish_sakana_yariika_syokuwan"
+    "sourceAssetName": "fish_sakana_yariika_syokuwan",
+    "description": "",
+    "sourceDescription": "Squid is a type of cephalopod that is found in oceans around the world. It is known for its unique, cylindrical body shape, with eight arms and two tentacles. Squid has a mild, slightly sweet flavor and a firm, chewy texture, which makes it well-suited for use in a variety of different dishes. In Japanese cuisine, squid is often served as sashimi, sushi, or tempura, and is also a popular ingredient in other dishes such as stir-fries, soups, and stews. Squid ink, which is extracted from the squid's ink sac, is also a popular ingredient in Japanese cooking, and is used to add a distinctive flavor and dark color to dishes such as pasta and risotto."
   },
   {
     "name": "mantis shrimp",
@@ -137,7 +163,9 @@
     "kanji": "蝦蛄",
     "kana": "シャコ",
     "romaji": "syako",
-    "sourceAssetName": "fish_syako"
+    "sourceAssetName": "fish_syako",
+    "description": "",
+    "sourceDescription": "Mantis shrimp, also known as stomatopods, are a type of marine crustacean found in the warm waters of the Indian and Pacific Oceans. They are known for their unique appearance, with brightly colored shells and powerful claws that they use to catch prey. Mantis shrimp are also prized as a food source in many Asian countries, particularly in Japan and Southeast Asia, where they are often prepared as sashimi or cooked in a variety of dishes. Mantis shrimp have a sweet, delicate flavor and a firm, meaty texture, making them a popular ingredient in many seafood dishes. They are also high in protein and other important nutrients, making them a nutritious addition to any diet."
   },
   {
     "name": "octopus",
@@ -147,17 +175,21 @@
     "kanji": "蛸",
     "kana": "タコ",
     "romaji": "tako",
-    "sourceAssetName": "fish_tako_oyogu"
+    "sourceAssetName": "fish_tako_oyogu",
+    "description": "",
+    "sourceDescription": "Octopus is a type of cephalopod that is found in oceans around the world. It is known for its eight arms, each lined with suction cups that it uses to move and catch prey. Octopus is a popular ingredient in many different cuisines, particularly in Japanese and Mediterranean cooking. It has a mild, slightly sweet flavor and a tender, slightly chewy texture that makes it well-suited for use in a variety of dishes. In Japanese cuisine, octopus is often served as sashimi or nigiri sushi, while in Mediterranean cuisine it is often grilled or braised and served with olive oil and lemon. Octopus is also a nutritious food, high in protein and other important nutrients."
   },
   {
-    "name": "eel",
+    "name": "unagi",
     "assetName": "unagi",
     "type": 1,
     "sourceName": "eel",
     "kanji": "鰻",
     "kana": "うなぎ",
     "romaji": "unagi",
-    "sourceAssetName": "fish_unagi2"
+    "sourceAssetName": "fish_unagi2",
+    "description": "Unagi is a type of sushi made from freshwater eel that has been grilled and glazed with a sweet, savory sauce. It is a popular dish in Japanese cuisine and is often served as nigiri sushi or as part of an assorted sushi platter. Unagi has a rich, meaty flavor and a tender, slightly fatty texture that makes it a popular choice for sushi lovers who appreciate the taste and texture of cooked fish. The sauce used to glaze the unagi is typically made from soy sauce, sugar, mirin, and sake, and gives the fish a sweet and savory flavor that complements its natural richness.",
+    "sourceDescription": "Eel is a type of fish that is commonly found in both freshwater and saltwater environments around the world. It is known for its long, slender body and snake-like appearance, with a smooth, slimy texture. Eel is a popular ingredient in many different cuisines, particularly in Japanese and European cooking."
   },
   {
     "name": "harasu",
@@ -167,7 +199,9 @@
     "kanji": "鮭",
     "kana": "サケ",
     "romaji": "sake",
-    "sourceAssetName": "fish_sakana_sake"
+    "sourceAssetName": "fish_sakana_sake",
+    "description": "Harasu is a type of sushi made from the belly of the salmon fish, known for its rich, buttery flavor and tender, fatty texture. The harasu cut of salmon is located between the leaner akami and the fattier otoro, and is highly prized for its luxurious mouthfeel and rich taste.",
+    "sourceDescription": "Salmon is a type of fish that is native to the waters of the North Atlantic and Pacific Oceans. It is a popular food fish that is enjoyed by people around the world, and is known for its firm, meaty flesh and rich, buttery flavor. Salmon is a versatile ingredient that can be prepared in a variety of ways, such as grilling, baking, or smoking, and is often served as sashimi, sushi, or as a component of other dishes, such as salads, pasta dishes, or sandwiches. In addition to its delicious taste, salmon is also a nutritious fish that is high in omega-3 fatty acids and other important nutrients."
   },
   {
     "name": "scallop",
@@ -177,17 +211,21 @@
     "kanji": "帆立",
     "kana": "ホタテ",
     "romaji": "hotate",
-    "sourceAssetName": "kai_hotate"
+    "sourceAssetName": "kai_hotate",
+    "description": "",
+    "sourceDescription": "Scallops are a type of shellfish that are found in oceans around the world. They are known for their delicate, sweet flavor and tender, buttery texture, which make them a popular ingredient in many different types of cuisine. Scallops are often prepared by pan-searing or grilling, and are also commonly served raw as sashimi or sushi. In Japanese cuisine, scallops are often paired with complementary flavors and textures, such as soy sauce, wasabi, or pickled ginger, to create a balanced and satisfying dish. Scallops are also a nutritious food, high in protein and other important nutrients."
   },
   {
     "name": "kinmedai",
     "assetName": "kinmedai",
     "type": 1,
-    "sourceName": "splendid alfonsino",
+    "sourceName": "golden eye snapper",
     "kanji": "金目鯛",
     "kana": "キンメダイ",
     "romaji": "kinmedai",
-    "sourceAssetName": "shinkai_kinmedai_gold"
+    "sourceAssetName": "shinkai_kinmedai_gold",
+    "description": "",
+    "sourceDescription": "Kinmedai, also known as golden eye snapper, is a type of fish that is commonly found in the waters surrounding Japan. It is a prized ingredient in Japanese cuisine, known for its delicate, sweet flavor and firm, juicy texture. Kinmedai has a distinctive appearance, with golden scales and large eyes that give it its name. It is typically served as sashimi or nigiri sushi, where its flavor and texture can be enjoyed in its purest form. Kinmedai is often paired with complementary flavors and textures, such as soy sauce, wasabi, or pickled ginger, to create a balanced and satisfying dish. It is considered a high-end ingredient in Japanese cuisine, and is a popular choice for sushi enthusiasts who appreciate the subtleties of different types of fish."
   },
   {
     "name": "otoro",
@@ -197,7 +235,9 @@
     "kanji": "鮪",
     "kana": "マグロ",
     "romaji": "maguro",
-    "sourceAssetName": "fish_maguro2"
+    "sourceAssetName": "fish_maguro2",
+    "description": "",
+    "sourceDescription": "Tuna is typically sourced from large, mature fish that are caught in the waters surrounding Japan. This tuna is known for its rich, meaty flavor and firm texture, which make it well-suited for use in sushi and other Japanese dishes. The tuna is often flash-frozen shortly after being caught, in order to preserve its freshness and quality until it is ready to be prepared."
   },
   {
     "name": "uni",
@@ -207,7 +247,9 @@
     "kanji": "雲丹",
     "kana": "ウニ",
     "romaji": "uni",
-    "sourceAssetName": "uni_murasaki"
+    "sourceAssetName": "uni_murasaki",
+    "description": "",
+    "sourceDescription": "Urchin, also known as sea urchin or uni in Japanese, is a type of sea creature that is commonly found in oceans around the world. It is known for its spiky exterior and delicate, creamy interior, which is highly prized as a delicacy in many different types of cuisine. In Japanese cuisine, urchin is often served as sashimi or nigiri sushi, where its rich, buttery flavor and velvety texture can be enjoyed in its purest form. The urchin's roe, or eggs, are the most highly prized part of the animal, and are often referred to as \"uni\" in Japanese. Uni has a distinctive taste that is often described as briny and slightly sweet, with a soft and creamy texture that melts in the mouth. Uni is often paired with other complementary flavors and textures, such as rice, seaweed, or soy sauce, to create a balanced and satisfying dish."
   },
   {
     "name": "ginger onion",
@@ -217,6 +259,8 @@
     "kanji": "生姜　葱",
     "kana": "ショウガ　ネギ",
     "romaji": "syoga negi",
-    "sourceAssetName": "syoga_negi"
+    "sourceAssetName": "syoga_negi",
+    "description": "",
+    "sourceDescription": "Ginger and onion are two common ingredients that are often used in sushi as garnishes or accompaniments to the fish. Ginger, also known as pickled ginger or gari, is typically served as a palate cleanser between bites of sushi to refresh the palate and enhance the flavor of the fish. The ginger is thinly sliced and pickled in vinegar and sugar, giving it a slightly sweet and tangy flavor that complements the delicate flavors of the sushi. Onion, on the other hand, is often used as a garnish for sushi rolls or nigiri, adding a subtle crunch and a hint of sweetness to the dish. Thinly sliced scallions, also known as green onions, are a popular choice for sushi garnishes, as they add color and texture to the dish while also enhancing its overall flavor."
   }
 ]

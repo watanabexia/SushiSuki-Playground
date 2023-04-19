@@ -9,12 +9,6 @@ import SpriteKit
 import SwiftUI
 
 //
-// MARK: Global Parameters
-//
-
-let unitOffset = 25
-
-//
 // MARK: Sushi Scene
 //
 
@@ -242,6 +236,7 @@ class SushiPlateNode: SKSpriteNode {
 
 class SushiNode: SKSpriteNode {
     
+    let unitOffset = 25
     var sushi: Sushi?
     
     init(sushi: Sushi) {

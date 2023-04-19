@@ -22,6 +22,8 @@ class SushiDB: ObservableObject {
         let kana: String
         let romaji: String
         let sourceAssetName: String
+        let description: String?
+        let sourceDescription: String?
     }
     
     var ingredientListDict: [String:[Ingredient]]
@@ -45,7 +47,7 @@ class SushiDB: ObservableObject {
                     var otherList:[Ingredient] = []
                     
                     for ingredientRaw in ingredientsRaw {
-                        let newIngredient = Ingredient(name: ingredientRaw.name, assetName: ingredientRaw.assetName, source: Source(name: ingredientRaw.sourceName, kanji: ingredientRaw.kanji, kana: ingredientRaw.kana, romaji: ingredientRaw.romaji, assetName: ingredientRaw.sourceAssetName), type: ingredientRaw.type)
+                        let newIngredient = Ingredient(name: ingredientRaw.name, assetName: ingredientRaw.assetName, source: Source(name: ingredientRaw.sourceName, kanji: ingredientRaw.kanji, kana: ingredientRaw.kana, romaji: ingredientRaw.romaji, assetName: ingredientRaw.sourceAssetName, description: ingredientRaw.description, sourceDescription: ingredientRaw.sourceDescription), type: ingredientRaw.type)
                         
                         ingredientDict[newIngredient.name] = newIngredient
                         

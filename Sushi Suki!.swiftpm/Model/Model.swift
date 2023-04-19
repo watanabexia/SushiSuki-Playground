@@ -17,6 +17,8 @@ struct Source {
     let kana: String
     let romaji: String
     let assetName: String
+    let description: String?
+    let sourceDescription: String?
 }
 
 //
