@@ -2,7 +2,7 @@
 //  SourceView.swift
 //  
 //
-//  Created by 夏同光 on 4/18/23.
+//  Created by Qingyang Xu on 4/18/23.
 //
 
 import SwiftUI
