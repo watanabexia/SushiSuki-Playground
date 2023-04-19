@@ -2,7 +2,7 @@
 //  ReceiptView.swift
 //  
 //
-//  Created by 夏同光 on 4/19/23.
+//  Created by Qingyang Xu on 4/19/23.
 //
 
 import SwiftUI

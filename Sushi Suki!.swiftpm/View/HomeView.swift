@@ -2,7 +2,7 @@
 //  HomeView.swift
 //  SushiSuki
 //
-//  Created by 夏同光 on 4/3/23.
+//  Created by Qingyang Xu on 4/3/23.
 //
 
 import SwiftUI

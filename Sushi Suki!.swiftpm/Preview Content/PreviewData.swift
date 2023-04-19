@@ -2,7 +2,7 @@
 //  PreviewData.swift
 //  
 //
-//  Created by 夏同光 on 4/18/23.
+//  Created by Qingyang Xu on 4/18/23.
 //
 
 var syariPreview = Ingredient(name: "syari", assetName: "sushi_syari", source: rice, type: .syari)

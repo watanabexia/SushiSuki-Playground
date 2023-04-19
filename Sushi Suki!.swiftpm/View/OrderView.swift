@@ -2,7 +2,7 @@
 //  OrderView.swift
 //  SushiSuki
 //
-//  Created by 夏同光 on 4/5/23.
+//  Created by Qingyang Xu on 4/5/23.
 //
 
 import SwiftUI
