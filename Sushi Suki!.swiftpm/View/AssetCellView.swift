@@ -16,7 +16,7 @@ struct AssetCellView: View {
             Image(assetName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 30)
+                .frame(width: 30, height: 20)
         }
     }
 }
